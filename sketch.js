@@ -13,7 +13,7 @@ function preload(){
 
 //Función para configurar el entorno inicial
 function setup() {
-  // database=firebase.database();
+   database=firebase.database();
   // database=firebase.database;
   // database=database();
 
@@ -25,10 +25,10 @@ function setup() {
 
 
   // var balloonHeight=database.refer('balloon/height');
-  // var balloonHeight=database.ref('balloon/height');
+   var balloonHeight=database.ref('balloon/height');
   // var balloonHeight=database.ref('height');
   
-  // balloonHeight.on("value",readHeight);
+   balloonHeight.on("value",readHeight);
   // balloonHeight.on(readHeight);
   // balloonHeight.in("value",readHeight);
 
@@ -70,7 +70,7 @@ function draw() {
   text("**¡Utiliza las teclas de flecha para mover el globo aerostático!",40,40);
 }
 function updateHeight(x,y){
-  // database.ref('balloon/height').set({
+   database.ref('balloon/height').set({
   // database.ref('balloon/height').settting({
   // database.ref('height').set({
     'x': height.x + x ,
@@ -80,7 +80,7 @@ function updateHeight(x,y){
 
 function readHeight(data){
   // height = data.value();
-  // height = data.val();
+   height = data.val();
   // height = data.val;
  
   balloon.x = height.x;
